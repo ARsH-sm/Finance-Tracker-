@@ -1,0 +1,310 @@
+/* ===============================
+   RESET & VARIABLES
+================================ */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary: #4f46e5;
+  --secondary: #22c55e;
+  --danger: #ef4444;
+  --bg: #f5f7fb;
+  --card: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --radius: 14px;
+}
+
+/* ===============================
+   BASE
+================================ */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+/* ===============================
+   DARK MODE
+================================ */
+body.dark {
+  --bg: #0f172a;
+  --card: #1e293b;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+}
+
+/* ===============================
+   LOGIN PAGE
+================================ */
+.login-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+}
+
+.login-box {
+  background: #fff;
+  padding: 32px;
+  width: 320px;
+  border-radius: var(--radius);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+}
+
+.login-box h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: var(--radius);
+  border: 1px solid #d1d5db;
+}
+
+.login-box button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background: var(--primary);
+  color: white;
+  font-weight: bold;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.login-box button:hover {
+  opacity: 0.9;
+}
+
+.error {
+  color: var(--danger);
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* ===============================
+   SIDEBAR
+================================ */
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 240px;
+  height: 100%;
+  background: linear-gradient(180deg, #1e293b, #020617);
+  color: white;
+  padding: 25px 20px;
+  z-index: 100;
+  transition: transform 0.3s ease;
+}
+
+.sidebar h3 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.sidebar button {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 14px;
+  border: none;
+  border-radius: var(--radius);
+  background: #334155;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.sidebar button:hover {
+  background: #475569;
+}
+
+/* ===============================
+   MAIN LAYOUT
+================================ */
+.main {
+  margin-left: 240px;
+  padding: 25px;
+}
+
+/* ===============================
+   HEADER
+================================ */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.dashboard-header h2 {
+  font-size: 24px;
+}
+
+.balance {
+  margin-top: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--secondary);
+}
+
+.menu-btn {
+  display: none;
+  font-size: 22px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+/* ===============================
+   FORM
+================================ */
+form {
+  background: var(--card);
+  padding: 20px;
+  border-radius: var(--radius);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+input, select, button {
+  padding: 12px;
+  border-radius: var(--radius);
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+form button {
+  grid-column: span 1;          /* ⬅ stop full-width */
+  justify-self: start;            /* ⬅ align to right */
+  padding: 10px 22px;           /* ⬅ smaller button */
+  background: var(--secondary);
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 999px;         /* ⬅ pill style */
+  cursor: pointer;
+  width: auto;                  /* ⬅ content-sized */
+}
+
+form button:hover {
+  opacity: 0.9;
+}
+
+/* ===============================
+   SEARCH & SORT
+================================ */
+#search, #sort {
+  margin-bottom: 15px;
+  margin-right: 10px;
+}
+
+/* ===============================
+   TRANSACTION LIST
+================================ */
+#transaction-list {
+  list-style: none;
+  margin-top: 10px;
+}
+
+#transaction-list li {
+  background: var(--card);
+  padding: 15px 18px;
+  border-radius: var(--radius);
+  margin-bottom: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#transaction-list li.income {
+  border-left: 6px solid var(--secondary);
+}
+
+#transaction-list li.expense {
+  border-left: 6px solid var(--danger);
+}
+
+.amount {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.tag {
+  background: #e5e7eb;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  margin-left: 8px;
+}
+
+.date {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* ===============================
+   CHARTS
+================================ */
+.charts {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.charts canvas {
+  background: var(--card);
+  padding: 15px;
+  border-radius: var(--radius);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  max-width: 320px;
+  max-height: 320px;
+}
+
+/* ===============================
+   MOBILE RESPONSIVE
+================================ */
+@media (max-width: 900px) {
+  .main {
+    margin-left: 0;
+  }
+
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  .sidebar.show {
+    transform: translateX(0);
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  form {
+    grid-template-columns: 1fr;
+  }
+
+  form button {
+    grid-column: span 1;
+  }
+}

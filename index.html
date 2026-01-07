@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Finance Tracker</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<div class="sidebar" id="sidebar">
+  <h3>Menu</h3>
+  <button onclick="toggleDark()">🌙 Dark Mode</button>
+  <button onclick="exportCSV()">⬇ Export CSV</button>
+  <button onclick="logout()">🚪 Logout</button>
+</div>
+
+<div class="main">
+  <header class="dashboard-header">
+    <div>
+      <h2>Welcome, <span id="user"></span></h2>
+      <p class="balance">
+        Current Balance: ₹<span id="balance">0</span>
+      </p>
+    </div>
+    <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+  </header>
+
+  <!-- Transaction Form -->
+  <form id="form">
+    <input id="title" placeholder="Title" required>
+    <input id="amount" type="number" placeholder="Amount (₹)" required>
+
+    <select id="type">
+      <option value="income">Income</option>
+      <option value="expense">Expense</option>
+    </select>
+
+    <select id="category"></select>
+
+    <input id="date" type="date" required>
+    <input id="note" placeholder="Note (optional)">
+    <button>Add</button>
+  </form>
+
+  <!-- Search & Sort -->
+  <input id="search" placeholder="Search by title...">
+  <select id="sort">
+    <option value="">Sort</option>
+    <option value="amount">Amount</option>
+    <option value="date">Date</option>
+  </select>
+
+  <!-- Transactions -->
+  <ul id="transaction-list"></ul>
+
+  <!-- Charts -->
+  <div class="charts">
+    <canvas id="pieChart"></canvas>
+    <canvas id="barChart"></canvas>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

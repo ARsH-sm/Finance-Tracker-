@@ -1,0 +1,76 @@
+{
+  "users": [
+    {
+      "username": "admin",
+      "password": "1234",
+      "budget": 4000
+    }
+  ],
+  "transactions": [
+    {
+      "username": "admin",
+      "title": "Pocket Money",
+      "amount": 3000,
+      "type": "income",
+      "category": "Education",
+      "date": "2025-01-01",
+      "note": "Monthly allowance",
+      "recurring": "monthly"
+    },
+    {
+      "username": "admin",
+      "title": "Food",
+      "amount": 500,
+      "type": "expense",
+      "category": "Food",
+      "date": "2025-01-05",
+      "note": "Canteen",
+      "recurring": "no"
+    },
+    {
+      "username": "admin",
+      "title": "dads gift",
+      "amount": 1000000,
+      "type": "income",
+      "category": "Pocket Money",
+      "date": "2026-11-01",
+      "note": ""
+    },
+    {
+      "username": "admin",
+      "title": "movie",
+      "amount": 12345,
+      "type": "expense",
+      "category": "Entertainment",
+      "date": "2026-01-01",
+      "note": ""
+    },
+    {
+      "username": "admin",
+      "title": "rent",
+      "amount": 500000,
+      "type": "expense",
+      "category": "Travel",
+      "date": "2025-12-09",
+      "note": ""
+    },
+    {
+      "username": "admin",
+      "title": "Wedding",
+      "amount": 20000000,
+      "type": "expense",
+      "category": "Entertainment",
+      "date": "2026-01-29",
+      "note": "Enjoyed"
+    },
+    {
+      "username": "admin",
+      "title": "Project",
+      "amount": 100000000,
+      "type": "income",
+      "category": "Salary",
+      "date": "2026-01-02",
+      "note": ""
+    }
+  ]
+}
