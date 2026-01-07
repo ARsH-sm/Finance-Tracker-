@@ -18,3 +18,6 @@ JSON file based storage (data.json)
 ### Start Server
 npm install
 npm start
+
+## Output
+<img width="816" height="1056" alt="image" src="https://github.com/user-attachments/assets/b49bd08d-464d-4553-8a05-995950d681ab" />
